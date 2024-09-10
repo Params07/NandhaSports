@@ -1,0 +1,35 @@
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logo {
+    white-space: nowrap;
+    overflow: hidden; 
+  }
+  
+  .slider {
+    display: inline-flex;
+    animation: 10s slide infinite linear;
+    width: 140%; 
+  }
+  
+  .slider img {
+    margin: 0 20px;
+  }
+  
+  
+    @media (min-width: 1024px) {
+        .slider img {
+            margin: 0 40px;
+          }
+          .slider {
+            display: inline-flex;
+            animation: 10s slide infinite linear;
+            width: 120%; 
+          }
+    }

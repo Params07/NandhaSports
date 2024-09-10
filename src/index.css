@@ -31,7 +31,7 @@
   
       .underline-animation:hover::after,
       .underline-animation.active::after {
-        width: 70%;
+        width: 100%;
       }
   
       .active {
@@ -45,4 +45,28 @@
       }
     }
   }
+  @keyframes slideFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in {
+    animation: slideFromLeft 1s forwards;
+    opacity: 0;
+  }
+  
+
+
+
+
+
+
+
+
   
