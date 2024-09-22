@@ -24,8 +24,11 @@ const LogoCarousel = () => {
   };
 
   return (
-    <div className="px-2 sm:px-4 "  >
-        <p className=" py-4 font-bold text-2xl sm:text-3xl">Our Brands</p>
+    <div className="px-6 mt-4 "  >
+       <div className="">
+        <p className="font-semibold font-roboto text-2xl sm:text-3xl">Our Brands</p>
+        <p className="mt-2 mb-2 w-full h-0.5 bg-gray-600"></p>
+      </div>
         <div className="slider-container ">
         
         <Slider {...settings}>

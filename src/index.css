@@ -7,7 +7,49 @@
     font-weight: 400;
     font-style: normal;
   }
+  .gradient_bg {
+    position: relative;
+  }
   
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .gradient_bg::after,
+  .gradient_bg::before {
+    --angle: 0deg;
+    content: "";
+    position: absolute;
+    height: 108%;
+    width: 102%;
+    background-color: aquamarine;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #ff0095, #ff4545);
+    border-radius: 5px;
+    animation: 3s spin linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  .gradient_bg::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  
+
   .gradient-shadow {
     box-shadow: 0 4px 6px -1px rgba(0, 128, 0, 0.3), 0 2px 4px -1px rgba(0, 255, 0, 0.3);
   }
@@ -24,14 +66,24 @@
         width: 0;
         height: 3px;
         bottom: -4px;
-        left: 0;
+        left: 50%;
         background-color: #74E291;
-        transition: width 0.3s ease;
+        transform: translateX(-50%);
+
+        transition: width 0.3s ease, left 0.3s ease,transform 0.3s ease;
       }
   
       .underline-animation:hover::after,
       .underline-animation.active::after {
         width: 100%;
+        left: 0;
+        transform: translateX(0);
+
+      }
+      .underline-animation::after {
+        width: 0;
+        left: 50%;
+        transform: translateX(-50%); 
       }
   
       .active {
